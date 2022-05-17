@@ -31,6 +31,8 @@ for (const movie of movies) {
 
 console.log(categorias);
 
+
+
 // Iteración #2: Mix Fors
 // Dado el siguiente javascript usa forof y forin para hacer la media
 // del volumen de todos los sonidos favoritos que tienen los usuarios.
@@ -84,6 +86,8 @@ for (const user of users) {
 
 media = volumenTotal / numeroSonidos;
 console.log(media);
+
+
 
 // Iteración #3: Mix Fors
 // Dado el siguiente javascript usa forof y forin para saber cuantas veces
@@ -139,8 +143,65 @@ for (const user of users_two) {
 
 console.log(sonidosFavoritosConteo);
 
+
+
 // Iteración #4: Métodos findArrayIndex
 // Crea una función llamada findArrayIndex que reciba como parametros un array de textos y un texto y
 // devuelve la posición del array cuando el valor del array sea igual al valor del texto que enviaste como parametro.
 
-function findArrayIndex(array, text) {}
+const ejemplo = ['Mantis', 'Panda', 'Tigre', 'Serpiente'];
+
+function findArrayIndex(array, text) {
+    for (let index = 0; index < array.length; index++) {
+        if (array[index] === text) {
+            return index;
+        }
+    }
+
+    return -1;
+}
+
+/*
+function findArrayIndex(array, text) {
+    return array.indexOf(text);
+}
+*/
+
+
+console.log(findArrayIndex(ejemplo,'Tigre'));
+
+
+
+
+// Iteración #5: Función rollDice
+// Crea una función llamada rollDice() que reciba como parametro el numero de caras 
+// que queramos que tenga el dado que deberá silumar el codigo dentro de la función.
+// Como hemos dicho, que la función use el parametro para simular una tirada de dado y retornar el resultado.
+// Si no se te ocurre como hacer un numero aleatorio no te preocupes! busca información sobre la función de javascript Math.random();
+
+function rollDice(numCaras) {
+    let min = 1;
+    let max = numCaras;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log('Tiramos un dado de 6 caras tres veces');
+console.log(rollDice(6));
+console.log(rollDice(6));
+console.log(rollDice(6));
+
+
+// Iteración #6: Función swap
+// Crea una función llamada swap() que reciba un array y dos parametros que sean indices del array.
+// La función deberá intercambiar la posición de los valores de los indices que hayamos enviado como parametro. 
+// Retorna el array resultante.
+
+
+const datosArray = ['Mesirve', 'Cristiano Romualdo', 'Fernando Muralla', 'Ronalguiño'];
+
+function swap(arr, i1, i2) {
+    let aux = arr[i1];
+    arr[i1] = arr[i2];
+    arr[i2] = aux;
+    return arr;
+}
